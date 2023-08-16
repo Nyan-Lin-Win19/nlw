@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fashion Git</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py3 fixed-top">    
+            <div class="container">
+                <img src="image/headerlogo.png">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i id="bar" class="fas fa-bars"></i></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link  active" href="cart.html">
+                        <i class="far fa-shopping-bag"></i>
+                    </a>
+                </li>
+              </div>
+            </div>
+          </nav>
+
+        <section id="cart-home" class="pt-5 mt-5 container">
+            <h2 class="font-weight-bold pt-5"> Shopping Cart</h2>
+        </section>
+
+        <section id="cart-container" class="container my-5">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Total</td>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <!-- JavaScript will populate the cart items here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="cart-bottom" class="container">
+                <div class="total">
+                    <div>
+                        <h5>Cart Total</h5>
+                        <div class="d-flex justify-content-between">
+                            <h6>Subtotal</h6>
+                            <p id="subtotal">$0.00</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h6>Shipping</h6>
+                            <p>$100.00</p>
+                        </div>
+                        <hr class="second-hr">
+                        <div class="d-flex justify-content-between">
+                            <h6>Total</h6>
+                            <p id="total">$0.00</p>
+                        </div>
+                        <button class="ml-auto" id="checkoutButton">Proceed To Checkout</button>
+                    </div>
+                </div>
+        </section>
+
+        <footer class="mt-5 py-5">
+            <div class="row container mx-auto pt-5">
+                <div class="footer-one col-lg-3 col-md-6 col-12"> 
+                    <img src="image/footerlogo.png" alt="">
+                    <p class="pt-3">Our mission is to empower fashion designers and independent sellers, providing them with a platform to showcase their unique creations and connect with a global audience of trendsetters.</p>
+                </div>
+            
+                <div class="footer-one col-lg-3 col-md-6 col-12 mb-3 offset-lg-6"> 
+                    <h5 class="pb-2">Contact Info</h5>  
+                    <div>
+                        <h6 class="text-uppercase">Address</h6> 
+                        <p>Office Tower 2,5th Floor Time City</p>
+                    </div>
+                    
+                    <div>
+                        <h6 class="text-uppercase">Phone</h6>
+                        <p>09 254 252 589</p>
+                    </div>
+                    
+                    <div>
+                        <h6 class="text-uppercase">Email</h6>
+                        <p>nyanlinwin@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright mt-5">
+                <div class="row container mx-auto">
+                    <div class="col-lg-4 col-md-6 col-12 text-center mx-auto">
+                        <p>Fashion Git @2023. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+           </footer>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+            integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+            integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+            crossorigin="anonymous"></script>
+
+            <script>
+
+                function updateTotal() {
+                    const rows = document.querySelectorAll("tbody tr");
+                    let total = 0;
+            
+                    rows.forEach(row => {
+                        const quantityInput = row.querySelector("input[type='number']");
+                        const priceElement = row.querySelector("td:nth-child(4) h5");
+                        const totalElement = row.querySelector("td:nth-child(6) h5");
+            
+                        const pricePerItem = parseFloat(priceElement.innerText.replace("$", ""));
+                        const quantity = parseInt(quantityInput.value);
+            
+                        const itemTotal = (quantity * pricePerItem).toFixed(2);
+                        total += parseFloat(itemTotal);
+            
+                        totalElement.innerText = "$" + itemTotal;
+                    });
+            
+                    const subtotalElement = document.querySelector(".total h6:nth-child(2) + p");
+                    const totalElement = document.querySelector(".total h6:nth-child(4) + p");
+            
+                    subtotalElement.innerText = "$" + total.toFixed(2);
+                    totalElement.innerText = "$" + (total + 100).toFixed(2);
+                }
+            </script>
+
+        <script>
+    function updateTotal() {
+        const rows = document.querySelectorAll("tbody tr");
+        let total = 0;
+
+        rows.forEach(row => {
+            const quantityInput = row.querySelector("input[type='number']");
+            const priceElement = row.querySelector("td:nth-child(4) h5");
+            const totalElement = row.querySelector("td:nth-child(6) h5");
+
+            const pricePerItem = parseFloat(priceElement.innerText.replace("$", ""));
+            const quantity = parseInt(quantityInput.value);
+
+            const itemTotal = (quantity * pricePerItem).toFixed(2);
+            total += parseFloat(itemTotal);
+
+            totalElement.innerText = "$" + itemTotal;
+        });
+
+        const subtotalElement = document.getElementById('subtotal');
+        const totalElement = document.getElementById('total');
+
+        subtotalElement.innerText = "$" + total.toFixed(2);
+        totalElement.innerText = "$" + (total + 100).toFixed(2); 
+    }
+        </script>
+
+        <script>
+    const checkoutButton = document.getElementById('checkoutButton');
+    checkoutButton.addEventListener('click', function() {
+        const confirmation = confirm("Thank You For Purchasing. Return to Home Page?");
+        if (confirmation) {
+            window.location.href = "index.html";
+        }
+    });
+        </script>
+
+<script>
+    const cartData = JSON.parse(localStorage.getItem('cartData'));
+
+    const cartTableBody = document.querySelector('#cart-container tbody');
+
+    if (cartData && cartData.length > 0) {
+        cartData.forEach((item) => {
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td><a href="" class="remove-item"><i class="fas fa-trash-alt"></i></a></td>
+                <td><img src="${item.imageSrc}" width="50"></td>
+                <td>
+                    <h5>${item.productName}</h5>
+                </td>
+                <td>
+                    <h5>$${item.price.toFixed(2)}</h5>
+                </td>
+                <td><input class="w-25 pl-1" value="1" min="0" type="number" oninput="updateTotal()"></td>
+                <td>
+                    <h5>$${item.price.toFixed(2)}</h5>
+                </td>
+            `;
+
+            cartTableBody.appendChild(newRow);
+        });
+    }
+    const removeIcons = document.querySelectorAll(".remove-item");
+        removeIcons.forEach(icon => {
+            icon.addEventListener("click", function (event) {
+                event.preventDefault();
+                const row = icon.closest("tr");
+                const productName = row.querySelector("td:nth-child(3) h5").textContent;
+                removeCartItem(productName);
+                row.remove();
+                updateTotal();
+            });
+        });
+
+        function removeCartItem(productName) {
+            const existingCartData = JSON.parse(localStorage.getItem('cartData'));
+            const updatedCartData = existingCartData.filter(item => item.productName !== productName);
+            localStorage.setItem('cartData', JSON.stringify(updatedCartData));
+        }
+
+</script>
+
+
+
+ </body>
+
+</html>

@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background:linear-gradient(to right, rgb(181, 0, 226),rgb(57, 255, 103));
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+h5 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+h6 {
+  color: #b0b0b0;
+}
+
+p{
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+button{
+    font-size: 0.8rem;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    background-color: #1d1d1d;
+    color: rgb(255, 255, 255);
+    padding: 13px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background:linear-gradient(to right, rgb(181, 0, 226),rgb(57, 255, 103));
+}
+
+.navbar{
+    font-size:20px;
+    top: 0;
+    left: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-light .navbar-nav .nav-link{
+    padding: 0 20px;
+    color: black;
+    transition: 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar i:hover{
+  color: rgb(26, 182, 62)
+}
+.navbar-light .navbar-nav .nav-link.active,
+.navbar i.active {
+  color: rgb(152, 25, 183);
+  background-color:rgb(26, 182, 62);
+  width: 20%;
+  height:-15px;
+  border-radius: 15px;
+}
+
+.navbar i{
+    font-size: 1.2rem;
+    padding: 0 7px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+/* Responsive */
+
+.navbar-light .navbar-toggler{
+    border: none;
+    outline: none;
+}
+
+#bar{
+    font-size: 1.5rem;
+    padding: 7px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+    color: black;
+}
+
+#bar:hover,
+#bar.active{
+    color: #fff;
+}
+
+@media screen and (max-width: 991px) {
+    body>nav>div>button:hover,
+    body>nav>div>button:focus{
+        background:linear-gradient(to right, rgb(181, 0, 226),rgb(57, 255, 103));
+    }
+
+    body>nav>div>button:hover #bar,
+    body>nav>div>button:focus #bar{
+        background:linear-gradient(to right, rgb(181, 0, 226),rgb(57, 255, 103));
+    }
+
+    #navbarSupportedContent>ul{
+        margin: 1rem;
+        justify-content: flex-end;
+        align-items: flex-end;
+        text-align: right;
+    }
+    #navbarSupportedContent > ul > li:nth-child(n) > a{
+        padding: 10px 0;
+    }
+}
+ 
+
+/* Products */
+
+.product{
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.product img{
+    transition: 0.3s all;
+}
+
+.product:hover img{
+    opacity: 0.7;
+}
+
+.product .buy-btn{
+    background: linear-gradient(to right,rgb(29, 147, 56),rgb(96, 3, 120));
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.3s all;
+}
+
+.product:hover .buy-btn{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* banner */
+
+#banner{
+    background-image: url("image/banner/2.jpg");
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: top 70px center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#banner1{
+    background-image: url("image/banner/1.jpg");
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: top 70px center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#banner h4{
+    color: #ffffff;
+}
+
+#banner1 h4{
+    color: rgb(255, 255, 255);
+}
+
+#banner{
+    color: #ffffff;
+}
+
+#banner1{
+    color: rgb(255, 255, 255);
+}
+
+#banner button,
+#banner1 button{
+    background:linear-gradient(to right, rgb(181, 0, 226),rgb(57, 255, 103));
+}
+
+/*AboutUs*/
+.how-formed-section {
+    background:linear-gradient(to right, rgb(181, 0, 226),rgb(57, 255, 103));
+    color: #333;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.how-formed-section h2 {
+    font-size: 36px;
+    padding-top: 50px;
+    margin-bottom: 20px;
+}
+
+.how-formed-section p {
+    font-size: 18}
+
+.map-section {
+    background: #6262626d;
+    padding-bottom: 30px;
+}
+
+.contact-section {
+        padding: 100px 0;
+    }
+    
+.contact-section h2 {
+        font-size: 35px;
+        margin-bottom: 20px;
+        font-weight: 450;
+    }
+    
+.contact-section p {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+    
+.form-group label {
+        font-weight: 450;
+    }
+    
+.form-control {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+.form-control:focus {
+        outline: none;
+        border-color: #333;
+    }
+    
+textarea.form-control {
+        resize: vertical;
+    }
+    
+.btn-primary {
+        padding: 10px 20px;
+        background: linear-gradient(to right,rgb(29, 147, 56),rgb(96, 3, 120));
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition:  0.3s;
+    }
+    
+.btn-primary:hover {
+    background:linear-gradient(to right, rgb(57, 255, 103),rgb(181, 0, 226));
+    }
+    
+    /* Contact Information Styles */
+.contact-info {
+     padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-info h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+
+footer{
+    background-color: rgb(39, 39, 39);
+}
+
+footer h5{
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  
+  footer h6{
+    color:#dcdcdc;
+  }
+
+footer p{
+    color: #999;
+    font-size:1.1rem;
+}
+
+/* Cart */
+
+#cart-container{
+    overflow-x: auto;
+}
+
+#cart-container table{
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.722);
+    width: 100%;
+    table-layout: fixed;
+    white-space:nowrap;
+}
+
+#cart-container table thead{
+    font-weight: 700;
+}
+
+#cart-container table thead td{
+    background:linear-gradient(to right, rgb(57, 255, 103),rgb(181, 0, 226));
+    color: #000000;
+    border: 1px solid #0f0f0f;
+    padding: 6px 0;
+}
+
+#cart-container table td{
+    border: 1px solid #0f0f0f;
+    text-align: center;
+}
+#cart-container table td:nth-child(1){
+    width: 100px;
+}
+
+#cart-container table td:nth-child(2),
+#cart-container table td:nth-child(3){
+    width: 200px;
+}
+
+#cart-container table td:nth-child(4),
+#cart-container table td:nth-child(5),
+#cart-container table td:nth-child(6){
+    width: 170px;
+}
+
+#cart-container table tbody img{
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+}
+
+#cart-container table tbody h5{
+    color: #000000;
+}
+
+#cart-container table tbody i{
+    color: #0f0f0f;
+}
+
+
+#cart-bottom .total>div{
+    border: 1px solid #0f0f0f;
+    background-color: #fff;
+}
+
+
+#cart-bottom .total h5{
+    background:linear-gradient(to right, rgb(57, 255, 103),rgb(181, 0, 226));
+    color: #000000;
+    border: none;
+    padding: 6px 12px;
+    font-weight: 700;
+}
+#cart-bottom .total h6{
+    color: black;
+}
+
+#cart-bottom .total div>div{
+    padding: 0 12px;
+}
+
+#cart-bottom .total h6{
+    columns: #000000;
+}
+
+#cart-bottom .total p{
+    color: #000000;
+}
+
+#cart-bottom .total div>button{
+    margin: 0 12px 20px 0;
+    background: linear-gradient(to right,rgb(29, 147, 56),rgb(96, 3, 120));
+    display: flex;
+    justify-content: flex-end;
+}
+
+#cart-bottom .total div>button>a{
+text-decoration: none;
+color: white;
+}
